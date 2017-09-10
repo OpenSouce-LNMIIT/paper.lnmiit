@@ -42,3 +42,6 @@ margin-left: 50px;
 .sidebar {padding-top: 15px;}
 .sidebar a {font-size: 18px;}
 }
+.main {
+    transition: margin-left .5s;
+}
