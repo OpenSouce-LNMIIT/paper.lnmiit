@@ -85,3 +85,17 @@
   color: #fff;
   background-color: #424242;
 }
+
+.jumbotron {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-left: 120px;
+  margin-right: 120px;
+  background-image: url(../images/lnm_bg.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.1em;
+}
