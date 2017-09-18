@@ -1,0 +1,90 @@
+body{
+  overflow-x:hidden;
+}
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #222;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar div {
+  padding: 8px 16px 8px 32px;
+  text-decoration: none;
+  color: #818181;
+  display: block;
+}
+
+.sidebar div h5 {
+  color: #fff;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+.main {
+  transition: margin-left .5s;
+}
+
+.card-header {
+  background-color: #424242;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 19px;
+  text-transform: uppercase;
+  font-weight: 400px;
+}
+
+.btn-primary, .btn-primary:focus, .btn-primary:visited, .btn-primary:active {
+  background: transparent;
+  border-color: #424242;
+  border-radius: 3px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 19px;
+  color: #424242;
+  transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -webkit-transition: all 1s;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #424242;
+}
