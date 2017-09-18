@@ -1,3 +1,6 @@
+body{
+  overflow-x:hidden;
+}
 .sidebar {
   height: 100%;
   width: 0;
