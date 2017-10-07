@@ -1,0 +1,17 @@
+{
+  "name": "paper.lnmiit",
+  "version": "1.0.0",
+  "description": "A collection of question papers for all subjects for all available years.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cybros/paper.lnmiit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cybros/paper.lnmiit/issues"
+  },
+  "homepage": "https://github.com/Cybros/paper.lnmiit#readme"
+}
