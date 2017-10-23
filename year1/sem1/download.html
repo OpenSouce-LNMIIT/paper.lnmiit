@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.png">
+
+  <title>LNMIIT Papers</title>
+  <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div>
+      <h5>About</h5> An intiative by Cybros - Computer club of LNMIIT to make an eassily accesible archive of question papers of various courses taught at LNMIIT.
+    </div>
+
+    <div>
+      <h5>Contact</h5></div>
+    <div>Every student should participate fully in this endeavour. Contact Cybros active members to submit a paper or make a PR yourself!</div>>
+  </div>
+  <div id="main" class="main">
+    <div class="navbar navbar-inverse bg-inverse">
+      <div class="container d-flex justify-content-between">
+        <span style="font-size:30px; cursor:pointer" onclick="openNav()" class="text-white">&#9776;</span>
+        <a href="index.html#" class="navbar-brand">LNMIIT Papers</a>
+      </div>
+    </div>
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">LNMIIT Papers</h1>
+        <p class="lead text-muted">All the papers are sorted by year basis, then semester then branch wise.</p>
+      </div>
+    </section>
+    <div class="container">
+      <div class="row" id="dynamic">
+        
+        
+        
+      </div>
+
+  </div>
+  
+  <div id="result"></div>
+  <script src="static/js/script.js"></script>
+
+  <!-- Bootstrap core JavaScript-->
+
+  <script src="static/js/jquery-3.1.1.slim.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="static/js/jquery-3.2.1.min.js"><\/script>')
+  </script>
+  <script src="static/js/tether.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+</body>
+
+
+<script>
+	
+	var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+	
+$(function() {
+	var varb = getUrlParameter('var');
+	var path=window.location.pathname.split( '/' );
+	var sem =path[path.length-2];
+	var year=path[path.length-3];
+	console.log(year);
+	console.log(sem);
+   $.get( "https://api.github.com/repos/Cybros/paper.lnmiit/contents/"+year+"/"+sem+"/"+varb, function( data ) {
+  console.log(data);
+	   
+	   var allcards='';
+	   for(i=0;i<data.length;i++){
+		  
+		   var card="<div style=\"margin-top:20px;\" class=\"col-lg-4 col-xs-12\"><div class=\"card\">\<div class=\"card-header\">"+varb+"-"+year+"-"+sem+"</div>\<div class=\"card-block\">\<h4 class=\"card-title\">"+data[i].name+"</h4>\<p class=\"card-text\"></p>\<a href=\""+data[i].download_url+"\" class=\"btn btn-primary\">Download</a></div></div></div>";
+		   allcards=allcards+''+card;
+		   
+	   
+	   $( "#dynamic" ).html( allcards );
+	   
+});
+	
+	
+});	
+	
+</script>
+</html>
