@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="favicon.png">
+  <link rel="icon" href="/favicon.png">
 
   <title>LNMIIT Papers</title>
   <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -48,12 +48,11 @@
 
   </div>
   
-  <div id="result"></div>
-  <script src="static/js/script.js"></script>
+ <script src="static/js/script.js"></script>
 
   <!-- Bootstrap core JavaScript-->
 
-  <script src="static/js/jquery-3.1.1.slim.min.js"></script>
+  
   <script>
     window.jQuery || document.write('<script src="static/js/jquery-3.2.1.min.js"><\/script>')
   </script>
@@ -80,25 +79,22 @@
 };
 	
 $(function() {
-	var varb = getUrlParameter('var');
-	var path=window.location.pathname.split( '/' );
-	var sem =path[path.length-2];
-	var year=path[path.length-3];
-	console.log(year);
-	console.log(sem);
+	var varb = getUrlParameter('branch');
+	var sem = getUrlParameter('sem');
+	var year= getUrlParameter('year');
    $.get( "https://api.github.com/repos/Cybros/paper.lnmiit/contents/"+year+"/"+sem+"/"+varb, function( data ) {
-  console.log(data);
+
 	   
 	   var allcards='';
 	   for(i=0;i<data.length;i++){
 		  
-		   var card="<div style=\"margin-top:20px;\" class=\"col-lg-4 col-xs-12\"><div class=\"card\">\<div class=\"card-header\">"+varb+"-"+year+"-"+sem+"</div>\<div class=\"card-block\">\<h4 class=\"card-title\">"+data[i].name+"</h4>\<p class=\"card-text\"></p>\<a href=\""+data[i].download_url+"\" class=\"btn btn-primary\">Download</a></div></div></div>";
+		   var card="<div style=\"margin-bottom:20px;\" class=\"col-lg-4 col-xs-12\"><div class=\"card\">\<div class=\"card-header\" style=\"padding: .75rem 1.25rem;\">"+varb+"-"+year+"-"+sem+"</div>\<div class=\"card-block\">\<h4 class=\"card-title\">"+data[i].name+"</h4>\<p class=\"card-text\"></p>\<a href=\""+data[i].download_url+"\" class=\"btn btn-primary\">Download</a></div></div></div>";
 		   allcards=allcards+''+card;
 		   
 	   
 	   $( "#dynamic" ).html( allcards );
 	   
-});
+}});
 	
 	
 });	
