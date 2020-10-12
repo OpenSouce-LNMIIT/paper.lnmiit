@@ -61,10 +61,10 @@ body{
 .card-header {
   background-color: #424242;
   color: white;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Courier New', Courier, monospace
   font-size: 19px;
   text-transform: uppercase;
-  font-weight: 400px;
+  font-weight: bold;
 }
 
 .btn-primary, .btn-primary:focus, .btn-primary:visited, .btn-primary:active {
@@ -87,4 +87,8 @@ body{
 .btn-primary:hover {
   color: #fff;
   background-color: #424242;
+}
+
+#card-header{
+  border-radius: 100%;
 }
